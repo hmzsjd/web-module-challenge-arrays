@@ -103,8 +103,9 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(originalFlavors){
+  originalFlavors.pop();
+  return originalFlavors;
 }
 
 
@@ -120,8 +121,8 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(flavors, idx){
+  return flavors[idx];
 }
 
 
@@ -140,8 +141,13 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(flavors, toBeRemoved){
+  for (let i =0; i < flavors.length; i++) {
+    if (flavors[i] === toBeRemoved) {
+      flavors.splice(i,1);
+    }
+  }
+  return flavors;
 }
 
 
@@ -166,8 +172,16 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(flavors, filterWord){
+  let filteredArray =[]
+
+  for (let i =0; i < flavors.length; i++) {
+    if (flavors[i].includes(filterWord)) {
+      filteredArray.push(flavors[i]);
+    }
+  }
+
+  return filteredArray;
 }
 
 
